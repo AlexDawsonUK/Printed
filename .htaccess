@@ -1,0 +1,132 @@
+# Apache Server Configs v6.0.0 | MIT License
+# https://github.com/h5bp/server-configs-apache
+
+# CORS (Foreign Urls)
+<IfModule mod_setenvif.c>
+	<IfModule mod_headers.c>
+		<FilesMatch "\.(avifs?|bmp|cur|gif|ico|jpe?g|a?png|jxl|svgz?|webp)$">
+			SetEnvIf Origin ":" IS_CORS
+			Header set Access-Control-Allow-Origin "*" env=IS_CORS
+		</FilesMatch>
+	</IfModule>
+</IfModule>
+<IfModule mod_headers.c>
+	<FilesMatch "\.(eot|otf|tt[cf]|woff2?)$">
+		Header set Access-Control-Allow-Origin "*"
+	</FilesMatch>
+</IfModule>
+# Encoding
+AddDefaultCharset utf-8
+<IfModule mod_mime.c>
+	AddCharset utf-8 .atom .bbaw .css .geojson .ics .kml .js .json .jsonld .log .manifest .markdown .md .mjs .php .rdf .rss .topojson .txt .vcard .vcf .vtt .webapp .webmanifest .xloc .xml
+</IfModule>
+
+# Rewrites
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	Options +FollowSymlinks
+	RewriteCond %{HTTPS} =on
+	RewriteRule ^ - [env=proto:https]
+	RewriteCond %{HTTPS} !=on
+	RewriteRule ^ - [env=proto:http]
+</IfModule>
+# SSL On
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{HTTPS} !=on
+	RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+# WWW Redirect
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+	RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
+</IfModule>
+# Errors
+Options -MultiViews
+ErrorDocument 403 https://printedcss.com/error.html#403
+ErrorDocument 404 https://printedcss.com/error.html#404
+ErrorDocument 500 https://printedcss.com/error.html#500
+ErrorDocument 503 https://printedcss.com/error.html#503
+
+# Security
+<IfModule mod_autoindex.c>
+	# Directory Listings
+	Options -Indexes
+</IfModule>
+<IfModule mod_headers.c>
+	# SSL Always
+	Header always set Strict-Transport-Security "max-age=16070400; includeSubDomains" "expr=%{HTTPS} == 'on'"
+</IfModule>
+<IfModule mod_headers.c>
+	# Enable CSP
+	Header set Content-Security-Policy "default-src 'self';"
+</IfModule>
+<IfModule mod_rewrite.c>
+	# Hide Hidden
+	RewriteEngine On
+	RewriteCond %{REQUEST_URI} "!(^|/)\.well-known/([^./]+./?)+$" [NC]
+	RewriteCond %{SCRIPT_FILENAME} -d [OR]
+	RewriteCond %{SCRIPT_FILENAME} -f
+	RewriteRule "(^|/)\." - [F]
+</IfModule>
+<IfModule !mod_authz_core.c>
+	# Block Sensative
+	<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|orig|psd|sh|sql|sw[op])|~)$">
+		Require all denied
+	</FilesMatch>
+</IfModule>
+<IfModule mod_headers.c>
+	# Reduce MIME Sniff
+	Header set X-Content-Type-Options "nosniff"
+</IfModule>
+<IfModule mod_headers.c>
+	# Powered By
+	Header unset X-Powered-By
+	Header always unset X-Powered-By
+</IfModule>
+# Server Data
+ServerSignature Off
+
+# Performance
+<IfModule mod_deflate.c>
+	<IfModule mod_setenvif.c>
+	# Mangled GZip
+	<IfModule mod_headers.c>
+		SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+		RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+	</IfModule>
+	</IfModule>
+	# Compression
+	<IfModule mod_filter.c>
+		AddOutputFilterByType DEFLATE text/text text/plain text/vcard text/calendar text/vtt text/cache-manifest text/x-cross-domain-policy text/vnd.rim.location.xloc text/x-component text/markdown text/html application/xhtml+xml text/xml application/xml application/rss+xml application/atom+xml application/rdf+xml application/vnd.google-earth.kml+xml text/css text/javascript text/ecmascript application/javascript application/x-javascript application/json application/ld+json application/manifest+json application/schema+json application/geo+json application/x-web-app-manifest+json application/wasm font/collection font/eot font/opentype font/otf font/ttf application/x-font-ttf application/vnd.ms-fontobject application/font-woff application/x-font-woff font/woff image/svg+xml image/vnd.microsoft.icon image/x-icon
+	</IfModule>
+	<IfModule mod_mime.c>
+		AddEncoding gzip	svgz
+	</IfModule>
+</IfModule>
+# Eliminate ETags
+<IfModule mod_headers.c>
+	Header unset ETag
+</IfModule>
+FileETag None
+# Cache Expire
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresDefault "access plus 1 month"
+		<FilesMatch "\.(txt|log|html|php|markdown|md|json|geojson|topojson|jsonld|manifest|webapp|appcache|webmanifest)$">
+		ExpiresDefault "access"
+	</FilesMatch>
+	<FilesMatch "\.(ic[os]|vcard|vcf|vtt|xml|atom|rss|rdf|kml)$">
+		ExpiresDefault "access plus 1 hour"
+	</FilesMatch>
+	<FilesMatch "\.(ico|cur|swf|pdf|doc[x]|xls[x]|ppt[x]|rtf)$">
+		ExpiresDefault "access plus 1 week"
+	</FilesMatch>
+	<FilesMatch "\.(css|js|m?js|otf|eot|tt[cf]|woff2?)$">
+		ExpiresDefault "access plus 1 month"
+	</FilesMatch>
+	<FilesMatch “\.(avifs?|crx|xpi|safariextz|htc|oex|wasm|svgz?|bmp|gif|jpe?g|a?png|jxl|tif?f|web[mp]|opus|m4[av]|midi?|mp[34]|og[agv]|aac|f4[abpv]|flv|wav|mov|avi|mk[av])$”>
+		ExpiresDefault "access plus 1 year"
+	</FilesMatch>
+</IfModule>

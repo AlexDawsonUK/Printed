@@ -1,0 +1,159 @@
+@font-face {
+	font-family:'Roboto Regular';
+	src:url('fonts/Roboto-Regular.woff2') format('woff2'),
+		url('fonts/Roboto-Regular.woff') format('woff');
+	font-display: swap;
+}
+@font-face {
+	font-family:'Roboto Bold';
+	src:url('fonts/Roboto-Bold.woff2') format('woff2'),
+		url('fonts/Roboto-Bold.woff') format('woff');
+	font-display: swap;
+	font-weight: bold;
+}
+@font-face {
+	font-family:'Roboto Thin';
+	src:url('fonts/Roboto-Thin.woff2') format('woff2'),
+		url('fonts/Roboto-Thin.woff') format('woff');
+	font-display: swap;
+	font-weight: 100;
+}
+@media screen {
+	::selection { background-color: #000000; color: #ffffff; }
+	.hide { height: 1px; left: -1000px; overflow: hidden; position: absolute; top: -1px; width: 1px; }
+	.t_show:target { height: auto; left: auto; overflow: auto; position: static; top: auto; width: auto; }
+	.error, .header, .footer, .main {
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+		animation-name: fadeIn; }
+	.download {
+		border: 2px solid #000000;
+		color: inherit; }
+	.main, .npm {
+		border: 2px solid #9A9A9A; }
+	.download, .npm {
+		border-radius: 10px;
+		padding: 1.5em 2em;
+		text-decoration: none; }
+	.added[data-ver]::after, .subheading, .link, .npm {
+		color: #9A9A9A; }
+	.copyright::before {
+		cursor: text;
+		padding-right: 0.2em; }
+	.copyright::before {
+		content: "\00a9"; }
+	.features::after {
+		content: ":";}
+	.added[data-ver]::after {
+		content: "v" attr(data-ver);
+		font-size: 0.75em;
+		margin-left: 0.5em;
+		vertical-align: super; }
+	.download, .get li, .npm {
+		display: inline-block; }
+	.footer {
+		display: flex;
+		justify-content: center; }
+	.added, .build, .copyright, .download, .error-head, .error-sub, .error-txt, .features, .heading, .npm, .subheading, .txt {
+		font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+	.subheading {
+		font-size: 1.4em;
+		letter-spacing: 2px; }
+	.heading {
+		font-size: 8em;
+		font-weight: 100; }
+	.logo {
+		height: 10em;
+		width: 10em; }
+	.added, .txt {
+		line-height: 1.5em; }
+	.get ul {
+		list-style-type: none;
+		padding-left: 0; }
+	.heading, .features, .main, .subheading, .txt {
+		margin: 0 auto; }
+	.get li {
+		margin: 0.2em 0; }
+	.header {
+		margin-top: 2em; }
+	.get {
+		margin-bottom: 3em;
+		margin-top: 3em; }
+	.main {
+		margin: 3em auto;
+		padding: 2em; }
+	.main, .txt {
+		max-width: 40em; }
+	.build, .copyright {
+		padding-left: 1em;
+		padding-right: 1em; }
+	.error-head, .error-sub, .error-txt, .header {
+		text-align: center; }
+}
+@media screen {
+	/* Fixes IE10x Border Support */
+	.main { display: block; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@media (prefers-color-scheme: dark) {
+	.body {
+		background-color: #121212; }
+	.download {
+		border-color: #575757; }
+	.npm {
+		border-color: #222222; }
+	.build, .copyright, .heading, .download, .features, .npm, .subheading, .t_show, .txt, ul {
+		color: #dfdfdf; }
+	.logo {
+		fill: #ffffff; }
+}
+@media (prefers-reduced-motion: reduce), (update: slow) {
+	*:not(.safe-animation),
+	*:not(.safe-animation)::before,
+	*:not(.safe-animation)::after {
+		animation-delay: -1ms !important;
+		animation-duration: 1ms !important;
+		animation-iteration-count: 1 !important;
+		background-attachment: initial !important;
+		scroll-behavior: auto !important;
+		transition-delay: -1ms !important;
+		transition-duration: 1ms !important;
+	}
+}
+@media print {
+	.download, .link {
+		color: inherit;
+		text-decoration: none; }
+	.copyright::before {
+		content: "\00a9";
+		padding-right: 0.2em; }
+	.download:after {
+		content: " - " attr(href); }
+	.build a::after {
+		content: ": " attr(href); }
+	.footer {
+		display: flex;
+		justify-content: center; }
+	.body {
+		font-family: Constantia, Palatino, 'Book Antiqua', 'Palatino Linotype', serif; }
+	.heading {
+		font-size: 4em;
+		margin: 0 auto; }
+	.subheading {
+		font-size: 1.5em;
+		margin-top: 0; }
+	.logo {
+		height: 10em;
+		width: 10em; }
+	.get ul {
+		list-style-type: none;
+		padding-left: 0; }
+	.build, .copyright {
+		padding-left: 1em;
+		padding-right: 1em; }
+	.header, .footer {
+		text-align: center; }
+}

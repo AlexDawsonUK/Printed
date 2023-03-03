@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Printed - A Print Friendly CSS Library</title>
+		<meta name="description" content="Take the hassle out of printing for the web. This customizable CSS library turns any layout into a format-friendly, sustainable, output accessible document.">
+		<link rel="preload" as="font" type="font/woff2" crossorigin href="cache/fonts/Roboto-Bold.woff2">
+		<link rel="preload" as="font" type="font/woff2" crossorigin href="cache/fonts/Roboto-Regular.woff2">
+		<link rel="preload" as="font" type="font/woff2" crossorigin href="cache/fonts/Roboto-Italic.woff2">
+		<link rel="stylesheet" href="cache/style.css">
+		<link rel="author" type="text/plain" href="humans.txt">
+		<meta name="referrer" content="no-referrer">
+		<meta name="apple-mobile-web-app-title" content="Printed">
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+		<link rel="icon" type="image/svg+xml" href="images/icon.svg">
+		<link rel="manifest" href="site.webmanifest">
+		<meta name="theme-color" content="#ffffff">
+		<meta name="msapplication-config" content="browserconfig.xml">
+		<meta property="og:title" content="Printed">
+		<meta property="og:description" content="Take the hassle out of printing for the web. This customizable CSS library turns any layout into a format-friendly, sustainable, output accessible document.">
+		<meta property="og:type" content="website">
+		<meta property="og:locale" content="en_us">
+		<meta property="og:url" content="https://printedcss.com/">
+		<meta property="og:image" content="images/banner.png">
+		<meta property="og:image:alt" content="Logo">
+		<script async src="cache/script.js"></script>
+	</head>
+	<body class="body">
+		<header class="header">
+			<svg class="logo" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 64 64"><path d="M38 44H26a2 2 0 100 4h12a2 2 0 100-4zM42 52H22a2 2 0 100 4h20a2 2 0 100-4z"/><path d="M63.7 28.9l-8-12A2 2 0 0054 16h-6V2a2 2 0 00-2-2H18a2 2 0 00-2 2v14h-6a2 2 0 00-1.7.9l-8 12A2 2 0 000 30v20c0 1.1.9 2 2 2h9.2l-3.1 9.4A2 2 0 0010 64h44a2 2 0 001.9-2.6L52.8 52H62a2 2 0 002-2V30a2 2 0 00-.3-1.1zM20 4h24v16H20V4zm-7.2 56l6.6-20h25.2l6.6 20H12.8z"/></svg>
+			<h1 class="heading">Printed</h1>
+			<p class="subheading">A Print Friendly CSS Library</p>
+			<nav class="get"><ul role="list">
+				<li class="npm">npm install printed</li>
+				<li><a class="download" download href="cache/printed.min.css">Minified (CDN)</a></li>
+				<li><a class="download" download href="cache/printed.css">Source (v1.0)</a></li>
+			</ul></nav>
+			<p class="txt">Printed is a helpful little CSS library. Just include it within your project; and it'll ensure your layout is Print-Friendly, works for PDF printers, and your projects remain as ecologically viable as possible on visitors ink and paper supplies. You can stick with the default settings, or throw in some custom CSS for powerful formatting control. Below if you see "html[data-", it identifies an attribute and value you can provide to the root HTML element. If you see a (.value) then that value can be utilized on any element in your document.</p>
+		</header>
+		<main class="main">
+			<h2 class="features">Features</h2>
+			<ul>
+				<li class="added" data-ver="1.0">Complete HTML5 Element Support</li>
+				<li class="added" data-ver="1.0">Text-Only Mode: html[data-theme=print-min]</li>
+				<li class="added" data-ver="1.0">Advanced Url Pseudo &amp; MIME Support</li>
+				<li class="added" data-ver="1.0">Add Page Break After Title Cover (.cover)</li>
+				<li class="added" data-ver="1.0">Hide Or Show Content (.hide) &amp; (.show)</li>
+				<li class="added">Ten Built-In CSS3 Image Filter Properties:<ul>
+					<li class="added" data-ver="1.0">(.blur), (.brightness), (.contrast)</li>
+					<li class="added" data-ver="1.0">(.invert), (.monochrome), (.saturate), (.sepia)</li>
+					<li class="added" data-ver="1.0">(.hue-90), (.hue-180), (.hue-270)</li>
+				</ul></li>
+				<li class="added">Print Single, Full-Page Or Image Gallery:<ul>
+					<li class="added" data-ver="1.0">html[data-img=value] + .value</li>
+					<li class="added" data-ver="1.0">(full-page), (gallery), (individual)</li>
+				</ul></li>
+				<li class="added" data-ver="1.0">Set Page Break Structure (.page-break)</li>
+				<li class="added" data-ver="1.0">Dark Paper Mode: html[data-paper=dark]</li>
+				<li class="added" data-ver="1.0">Exact Color Match: html[data-color=exact]</li>
+				<li class="added">Paper Size Sectioning:<ul>
+					<li class="added" data-ver="1.0">html[data-paper=value] .paper-size</li>
+					<li class="added" data-ver="1.0">ledger, legal, letter</li>
+					<li class="added" data-ver="1.0">A3, A4, A5, B4, B5, JIS-B4, JIS-B5</li>
+				</ul></li>
+				<li class="added">Landscape Columns:<ul>
+					<li class="added" data-ver="1.0">html[data-col=value] .column</li>
+					<li class="added" data-ver="1.0">two, three, four</li>
+				</ul></li>
+			</ul>
+		</main>
+		<footer class="footer">
+			<p class="copyright">Copyright, <span class="year">2023</span></p>
+			<p class="build">Built by <a class="link" href="https://alexanderdawson.com">Alex Dawson</a>.</p>
+		</footer>
+	</body>
+</html>

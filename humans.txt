@@ -1,0 +1,22 @@
+/* ----------------------- */
+/* Printed Website Credits */
+/* ----------------------- */
+
+/* TEAM */
+
+Title:		Alexander Dawson
+Position:	Web Developer
+Site:		https://alexanderdawson.com
+Twitter:	@AlexDawsonUK
+Location:	Brighton, UK
+Contact:	https://alexanderdawson.com/vcard.vcf
+
+/* SITE */
+
+Language:	English (US)
+Standards:	htaccess, TXT, HTML, XML, JSON, CSS, JS
+Components:	None
+Software:	Zavala, MindNode, VSCode, Transmit, iTerm, Affinity, Icon Slate, ImageAlpha, ImageOptim, RightFont, Sip, BetterZip
+Services:	Roboto (Typeface), IcoMoon Ultimate (Icons), Netlify, TSOHost (Daily.co.uk)
+Testing:	Chrome (Mac/PC), Firefox (Mac/PC), Safari (Mac/iOS), IE (11+)
+Updated:	https://printedcss.com/change.log
