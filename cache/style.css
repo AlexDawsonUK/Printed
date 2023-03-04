@@ -96,8 +96,12 @@
 	.main { display: block; }
 }
 @media screen and (max-width: 500px) {
+	.footer {
+		flex-direction: column-reverse; }
 	.heading {
 		font-size: 6em; }
+	.build, .copyright {
+		justify-content: center; }
 }
 @keyframes fadeIn {
     from { opacity: 0; }
