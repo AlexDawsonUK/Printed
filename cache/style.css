@@ -81,7 +81,7 @@
 		margin-bottom: 3em;
 		margin-top: 3em; }
 	.main {
-		margin: 3em auto;
+		margin: 3em auto 0 auto;
 		padding: 2em; }
 	.main, .txt {
 		max-width: 40em; }
