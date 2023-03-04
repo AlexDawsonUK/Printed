@@ -96,6 +96,10 @@
 	.main { display: block; }
 }
 @media screen and (max-width: 500px) {
+	.build, .copyright {
+		display: flex;
+		flex-basis: 50%;
+		white-space: pre-wrap; }
 	.footer {
 		flex-direction: column-reverse; }
 	.heading {
