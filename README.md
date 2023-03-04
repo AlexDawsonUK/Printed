@@ -3,7 +3,17 @@ A Print Friendly CSS Library.
 
 Printed is a helpful little CSS library. Just include it within your project; and it'll ensure your layout is Print-Friendly, works for PDF printers, and your projects remain as ecologically viable as possible on visitors ink and paper supplies. You can stick with the default settings, or throw in some custom CSS for powerful formatting control. Below if you see "html[data-", it identifies an attribute and value you can provide to the root HTML element. If you see a (.value) then that value can be utilized on any element in your document.
 
-Features:
+## Table of contents
+
+- [Features](#features)
+- [Files](#files)
+- [Installation](#installation)
+- [Browser support](#browser-support)
+- [Versioning](#versioning)
+- [License](#license)
+
+## Features
+
 * Complete HTML5 Element Support
 * Text-Only Mode: html[data-theme=print-min]
 * Advanced Url Pseudo & MIME Support
@@ -26,3 +36,37 @@ Features:
 * Landscape Columns:
   * html[data-col=value] .column
   * two, three, four
+  
+## Files
+
+```text
+/
+├── printed.css
+├── printed.min.css   (compressed)
+```
+
+## Installation
+
+```shell
+npm install printed
+```
+
+In browser:
+
+```html
+<link href="/path/to/printed.css" rel="stylesheet" media="print">
+```
+
+## Browser support
+
+- Chrome / Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+
+## Versioning
+
+Maintained under the [Semantic Versioning guidelines](https://semver.org/).
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT) © [Alexander Dawson](https://alexanderdawson.com/)
