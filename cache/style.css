@@ -66,7 +66,8 @@
 		height: 10em;
 		width: 10em; }
 	.added, .txt {
-		line-height: 1.5em; }
+		line-height: 1.5em;
+		word-break: keep-all; }
 	.get ul {
 		list-style-type: none;
 		padding-left: 0; }
@@ -93,6 +94,10 @@
 @media screen {
 	/* Fixes IE10x Border Support */
 	.main { display: block; }
+}
+@media screen and (max-width: 500px) {
+	.heading {
+		font-size: 6em; }
 }
 @keyframes fadeIn {
     from { opacity: 0; }
