@@ -1,18 +1,18 @@
 @font-face {
-	font-family:'Roboto Regular';
+	font-family:'Roboto';
 	src:url('fonts/Roboto-Regular.woff2') format('woff2'),
 		url('fonts/Roboto-Regular.woff') format('woff');
 	font-display: swap;
 }
 @font-face {
-	font-family:'Roboto Bold';
+	font-family:'Roboto';
 	src:url('fonts/Roboto-Bold.woff2') format('woff2'),
 		url('fonts/Roboto-Bold.woff') format('woff');
 	font-display: swap;
 	font-weight: bold;
 }
 @font-face {
-	font-family:'Roboto Thin';
+	font-family:'Roboto';
 	src:url('fonts/Roboto-Thin.woff2') format('woff2'),
 		url('fonts/Roboto-Thin.woff') format('woff');
 	font-display: swap;
