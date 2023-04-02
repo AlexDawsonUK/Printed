@@ -3,7 +3,7 @@
 ## [Unreleased]
 - N/A
 
-## 1.0.0 - 2019-11-04
+## 1.0.0 - 2023-03-03
 ### Added
 - change.log File with transparent version tracking.
 - .htaccess File with Headers, Rewrites, Security, & Performance modules.
