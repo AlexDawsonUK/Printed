@@ -1,0 +1,8 @@
+# 301 Redirect for Index.
+/index.html  /
+
+#Error Handling.
+/* /error.html#403 403
+/* /error.html#404 404
+/* /error.html#500 500
+/* /error.html#503 503

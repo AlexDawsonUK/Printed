@@ -41,6 +41,8 @@ AddDefaultCharset utf-8
 	RewriteEngine On
 	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 	RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
+	RewriteRule ^index.html$ / [R=301,L]
+	RewriteRule ^(.*)/index.html$ /$1/ [R=301,L]
 </IfModule>
 # Errors
 Options -MultiViews
@@ -48,8 +50,6 @@ ErrorDocument 403 https://printedcss.com/error.html#403
 ErrorDocument 404 https://printedcss.com/error.html#404
 ErrorDocument 500 https://printedcss.com/error.html#500
 ErrorDocument 503 https://printedcss.com/error.html#503
-RewriteRule ^index.html$ / [R=301,L]
-RewriteRule ^(.*)/index.html$ /$1/ [R=301,L]
 
 # Security
 <IfModule mod_autoindex.c>
